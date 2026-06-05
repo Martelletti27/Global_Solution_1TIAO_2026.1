@@ -56,7 +56,7 @@ Ao terminar **todas as etapas** de uma Sprint (ex.: S0.E1 + S0.E2 + S0.E3) e com
 
 | Sprint | Commit sugerido (titulo) | Feito? |
 |--------|--------------------------|--------|
-| S0 Fundacao | `feat(s0): fundacao OrbitFire — config, sqlite, seed offline` | Nao |
+| S0 Fundacao | `feat(s0): fundacao OrbitFire — config, sqlite, seed offline` | Sim |
 | S1 Ingestao | `feat(s1): ingestao FIRMS, clima e grade Centro-Oeste` | Nao |
 | S2 Features | `feat(s2): features, labels e dataset de modelagem` | Nao |
 | S3 Modelo | `feat(s3): treino LightGBM, risk score e inferencia` | Nao |
@@ -120,7 +120,7 @@ Global_Solution_1TIAO_2026.1/
 
 | Sprint | Etapas | Concluidas | Status geral |
 |--------|--------|------------|--------------|
-| S0 Fundacao | 3 | 3 | Concluida — aguardando commit/push |
+| S0 Fundacao | 3 | 3 | Concluida (commit + push em 2026-06-05) |
 | S1 Dados espaciais | 3 | 0 | Pendente |
 | S2 Features | 3 | 0 | Pendente |
 | S3 Modelo | 3 | 0 | Pendente |
@@ -129,7 +129,7 @@ Global_Solution_1TIAO_2026.1/
 | S6 Dashboard | 2 | 0 | Pendente |
 | S7 Entrega | 2 | 0 | Pendente |
 
-**Etapa atual:** Sprint 0 concluida — proxima: **S1.E1** (aguardando autorizacao para implementar). Commit/push S0 pendente.
+**Etapa atual:** **S1.E1** implementada — aguardando sua autorizacao para marcar como concluida.
 
 ---
 
@@ -192,8 +192,8 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 - [x] S0.E1, S0.E2, S0.E3 autorizadas
 - [x] `pytest` passando (20 testes)
 - [x] Commit: `feat(s0): fundacao OrbitFire — config, sqlite, seed offline`
-- [ ] Push para remoto
-- [ ] Marcar coluna **Feito?** = Sim na tabela de commits acima
+- [x] Push para remoto (`origin/main`, 2026-06-05)
+- [x] Marcar coluna **Feito?** = Sim na tabela de commits acima
 
 ---
 
@@ -205,9 +205,9 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 |-------|-------|
 | Objetivo | Baixar focos VIIRS/MODIS NRT e historico para bbox Centro-Oeste |
 | Modulos | M1 |
-| Implementada | Nao |
-| Testada | Nao |
-| Autorizada | Nao |
+| Implementada | Sim |
+| Testada | Sim (`test/unit/test_firms_client.py` — 9 testes) |
+| Autorizada | Nao — aguardando OK do usuario |
 
 **Entregaveis esperados:**
 - `src/infrastructure/firms/client.py`
@@ -544,7 +544,7 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 - [x] S0.E1 — config base
 - [x] S0.E2 — schema SQLite
 - [x] S0.E3 — seed offline
-- [ ] Commit/push Sprint 0
+- [x] Commit/push Sprint 0
 - [ ] Toda a Sprint 1 (ingestao)
 - [ ] Toda a Sprint 2 (features)
 - [ ] Toda a Sprint 3 (modelo)

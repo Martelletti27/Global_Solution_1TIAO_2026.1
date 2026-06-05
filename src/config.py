@@ -39,6 +39,7 @@ GRID_DEG: float = float(os.getenv("GRID_DEG", "0.25"))
 PROJECT_ROOT: Path = _PROJECT_ROOT
 DATA_DIR: Path = PROJECT_ROOT / "data"
 DATA_RAW: Path = DATA_DIR / "raw"
+DATA_RAW_FIRMS: Path = DATA_RAW / "firms"
 DATA_PROCESSED: Path = DATA_DIR / "processed"
 DATA_SEED: Path = DATA_DIR / "seed"
 DATA_MODELS: Path = DATA_DIR / "models"
@@ -51,8 +52,13 @@ DATABASE_URL: str = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH.as_posix()}")
 FIRMS_MAP_KEY: str = os.getenv("FIRMS_MAP_KEY", "")
 FIRMS_BASE_URL: str = "https://firms.modaps.eosdis.nasa.gov/api"
 FIRMS_SOURCE: str = os.getenv("FIRMS_SOURCE", "VIIRS_SNPP_NRT")
-FIRMS_DAYS: int = int(os.getenv("FIRMS_DAYS", "7"))
+# API area/csv aceita DAY_RANGE de 1 a 5 (documentacao FIRMS)
+FIRMS_DAYS: int = int(os.getenv("FIRMS_DAYS", "5"))
 FIRMS_BBOX: BBox = BBOX
+# Pausa minima entre requisicoes consecutivas (evita rajadas na mesma MAP_KEY)
+FIRMS_MIN_REQUEST_INTERVAL_SEC: float = float(
+    os.getenv("FIRMS_MIN_REQUEST_INTERVAL_SEC", "2")
+)
 
 # --- Clima (Open-Meteo por padrao na POC) ---
 OPEN_METEO_URL: str = "https://archive-api.open-meteo.com/v1/archive"
@@ -72,7 +78,7 @@ RECENT_DAYS: int = int(os.getenv("RECENT_DAYS", "90"))
 
 def ensure_data_dirs() -> None:
     """Garante que pastas de dados existem antes de ETL ou persistencia."""
-    for path in (DATA_RAW, DATA_PROCESSED, DATA_SEED, DATA_MODELS):
+    for path in (DATA_RAW, DATA_RAW_FIRMS, DATA_PROCESSED, DATA_SEED, DATA_MODELS):
         path.mkdir(parents=True, exist_ok=True)
 
 
