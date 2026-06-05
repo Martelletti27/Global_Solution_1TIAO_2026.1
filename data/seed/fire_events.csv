@@ -1,0 +1,11 @@
+latitude,longitude,acq_date,acq_time,brightness,confidence,frp,satellite,instrument,region_key,dedup_key
+-15.48,-56.24,2025-08-15,1420,320.5,high,12.4,N,VIIRS,BR-CO-MT-01,seed-f-001
+-15.51,-55.98,2025-08-15,1535,298.0,nominal,8.1,N,VIIRS,BR-CO-MT-02,seed-f-002
+-16.24,-49.48,2025-08-16,0910,275.3,high,5.6,N,VIIRS,BR-CO-GO-01,seed-f-003
+-20.49,-54.73,2025-08-16,1745,310.2,high,15.0,N,VIIRS,BR-CO-MS-01,seed-f-004
+-12.48,-55.74,2025-08-17,1205,340.1,high,22.8,N,VIIRS,BR-CO-MT-03,seed-f-005
+-15.49,-56.23,2025-08-17,1340,305.0,nominal,9.3,N,VIIRS,BR-CO-MT-01,seed-f-006
+-16.01,-49.26,2025-08-18,1015,260.0,low,3.2,N,VIIRS,BR-CO-GO-02,seed-f-007
+-20.26,-54.49,2025-08-18,1620,288.7,nominal,7.5,N,VIIRS,BR-CO-MS-02,seed-f-008
+-12.51,-55.76,2025-08-19,1100,355.4,high,28.1,N,VIIRS,BR-CO-MT-03,seed-f-009
+-15.80,-47.91,2025-08-19,0855,240.0,low,2.1,N,VIIRS,BR-CO-DF-01,seed-f-010

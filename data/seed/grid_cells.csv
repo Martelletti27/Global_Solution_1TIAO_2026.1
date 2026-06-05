@@ -1,0 +1,9 @@
+region_key,lat_center,lon_center,state,row_idx,col_idx
+BR-CO-MT-01,-15.50,-56.25,MT,0,0
+BR-CO-MT-02,-15.50,-56.00,MT,0,1
+BR-CO-GO-01,-16.25,-49.50,GO,1,0
+BR-CO-GO-02,-16.00,-49.25,GO,1,1
+BR-CO-MS-01,-20.50,-54.75,MS,2,0
+BR-CO-MS-02,-20.25,-54.50,MS,2,1
+BR-CO-DF-01,-15.80,-47.90,DF,3,0
+BR-CO-MT-03,-12.50,-55.75,MT,4,0
