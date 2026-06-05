@@ -40,6 +40,7 @@ PROJECT_ROOT: Path = _PROJECT_ROOT
 DATA_DIR: Path = PROJECT_ROOT / "data"
 DATA_RAW: Path = DATA_DIR / "raw"
 DATA_RAW_FIRMS: Path = DATA_RAW / "firms"
+DATA_RAW_WEATHER: Path = DATA_RAW / "weather"
 DATA_PROCESSED: Path = DATA_DIR / "processed"
 DATA_SEED: Path = DATA_DIR / "seed"
 DATA_MODELS: Path = DATA_DIR / "models"
@@ -61,7 +62,14 @@ FIRMS_MIN_REQUEST_INTERVAL_SEC: float = float(
 )
 
 # --- Clima (Open-Meteo por padrao na POC) ---
-OPEN_METEO_URL: str = "https://archive-api.open-meteo.com/v1/archive"
+OPEN_METEO_URL: str = os.getenv(
+    "OPEN_METEO_URL", "https://archive-api.open-meteo.com/v1/archive"
+)
+OPEN_METEO_TIMEZONE: str = os.getenv("OPEN_METEO_TIMEZONE", "America/Sao_Paulo")
+OPEN_METEO_BATCH_SIZE: int = int(os.getenv("OPEN_METEO_BATCH_SIZE", "25"))
+OPEN_METEO_ARCHIVE_LAG_DAYS: int = int(
+    os.getenv("OPEN_METEO_ARCHIVE_LAG_DAYS", "5")
+)
 
 # --- Execucao ---
 OFFLINE_MODE: bool = os.getenv("OFFLINE_MODE", "0").strip().lower() in (
@@ -78,7 +86,14 @@ RECENT_DAYS: int = int(os.getenv("RECENT_DAYS", "90"))
 
 def ensure_data_dirs() -> None:
     """Garante que pastas de dados existem antes de ETL ou persistencia."""
-    for path in (DATA_RAW, DATA_RAW_FIRMS, DATA_PROCESSED, DATA_SEED, DATA_MODELS):
+    for path in (
+        DATA_RAW,
+        DATA_RAW_FIRMS,
+        DATA_RAW_WEATHER,
+        DATA_PROCESSED,
+        DATA_SEED,
+        DATA_MODELS,
+    ):
         path.mkdir(parents=True, exist_ok=True)
 
 

@@ -1,4 +1,4 @@
-# Implementacao — OrbitFire
+﻿# Implementacao — OrbitFire
 
 Acompanhamento do desenvolvimento da POC GS 2026.1.
 
@@ -57,7 +57,7 @@ Ao terminar **todas as etapas** de uma Sprint (ex.: S0.E1 + S0.E2 + S0.E3) e com
 | Sprint | Commit sugerido (titulo) | Feito? |
 |--------|--------------------------|--------|
 | S0 Fundacao | `feat(s0): fundacao OrbitFire — config, sqlite, seed offline` | Sim |
-| S1 Ingestao | `feat(s1): ingestao FIRMS, clima e grade Centro-Oeste` | Nao |
+| S1 Ingestao | `feat(s1): ingestao FIRMS, clima e grade Centro-Oeste` | Sim |
 | S2 Features | `feat(s2): features, labels e dataset de modelagem` | Nao |
 | S3 Modelo | `feat(s3): treino LightGBM, risk score e inferencia` | Nao |
 | S4 Priorizacao | `feat(s4): priorizador de brigadas M10` | Nao |
@@ -121,7 +121,7 @@ Global_Solution_1TIAO_2026.1/
 | Sprint | Etapas | Concluidas | Status geral |
 |--------|--------|------------|--------------|
 | S0 Fundacao | 3 | 3 | Concluida (commit + push em 2026-06-05) |
-| S1 Dados espaciais | 3 | 0 | Pendente |
+| S1 Dados espaciais | 3 | 3 | Concluida |
 | S2 Features | 3 | 0 | Pendente |
 | S3 Modelo | 3 | 0 | Pendente |
 | S4 Priorizacao | 2 | 0 | Pendente |
@@ -129,7 +129,7 @@ Global_Solution_1TIAO_2026.1/
 | S6 Dashboard | 2 | 0 | Pendente |
 | S7 Entrega | 2 | 0 | Pendente |
 
-**Etapa atual:** **S1.E1** implementada — aguardando sua autorizacao para marcar como concluida.
+**Etapa atual:** **S2.E1** — aguardando autorizacao para implementar features.
 
 ---
 
@@ -207,7 +207,8 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 | Modulos | M1 |
 | Implementada | Sim |
 | Testada | Sim (`test/unit/test_firms_client.py` — 9 testes) |
-| Autorizada | Nao — aguardando OK do usuario |
+| Autorizada | Sim |
+| Status | **Concluida** |
 
 **Entregaveis esperados:**
 - `src/infrastructure/firms/client.py`
@@ -222,9 +223,10 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 |-------|-------|
 | Objetivo | Temperatura, precipitacao, vento diarios por estacao ou grade |
 | Modulos | M2 |
-| Implementada | Nao |
-| Testada | Nao |
-| Autorizada | Nao |
+| Implementada | Sim |
+| Testada | Sim (`test/unit/test_weather_client.py`, `test/unit/test_weather_ingest.py`) |
+| Autorizada | Sim |
+| Status | **Concluida** |
 
 **Entregaveis esperados:**
 - `src/infrastructure/weather/client.py`
@@ -239,9 +241,10 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 |-------|-------|
 | Objetivo | Gerar celulas com `region_key`, centro lat/lon, UF quando possivel |
 | Modulos | M3 |
-| Implementada | Nao |
-| Testada | Nao |
-| Autorizada | Nao |
+| Implementada | Sim |
+| Testada | Sim (`test/unit/test_region_key.py`, `test/unit/test_build_grid.py`) |
+| Autorizada | Sim |
+| Status | **Concluida** |
 
 **Entregaveis esperados:**
 - `src/domain/region_key.py`
@@ -250,9 +253,10 @@ Todas as etapas S0 autorizadas. Pendente execucao:
 
 ### Encerramento Sprint 1 — commit e push
 
-- [ ] S1.E1–S1.E3 autorizadas
-- [ ] Commit: `feat(s1): ingestao FIRMS, clima e grade Centro-Oeste`
-- [ ] Push para remoto
+- [x] S1.E1–S1.E3 autorizadas
+- [x] `pytest` passando (44 testes)
+- [x] Commit: `feat(s1): ingestao FIRMS, clima e grade Centro-Oeste`
+- [x] Push para remoto
 
 ---
 
