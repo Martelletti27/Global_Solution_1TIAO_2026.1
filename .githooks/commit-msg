@@ -1,0 +1,9 @@
+﻿#!/bin/sh
+# Remove trailer Co-authored-by injetado pelo Cursor (regra git-commits.mdc).
+msgfile="$1"
+tmp="${msgfile}.clean"
+grep -v -i '^Co-authored-by: Cursor' "$msgfile" \
+  | grep -v -i 'cursoragent@cursor.com' > "$tmp" \
+  && mv "$tmp" "$msgfile"
+exit 0
+
